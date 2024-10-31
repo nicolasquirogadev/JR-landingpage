@@ -279,35 +279,37 @@ a {
 }
 
 footer {
-    position: inherit;
-    background-color: var(--green_soft);
+    background-color: var(--white);
     color: var(--pink_strong);
+    padding: 40px 20px;
     text-align: center;
-    width: 100vw;
-    max-height: fit-content;
-    padding: 25px;
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 10px;
-    gap: 25px;
-    margin-bottom: 30px;
-}
-
-.footer-container ul {
-    text-align: center;
-    
+    display: flex;
+    justify-content: space-around;
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
 .footer-title {
-    font-family: "Voltaire", sans-serif;
-    font-size: 3em;
-    color: var(--green_strong);
+    font-family: var(--header-font);
+    color: var(--pink_strong);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
 .footer-link {
-    color: var(--pink_strong);
-    font-size: 1.3em;
+    text-decoration: none;
+    color: var(--green_soft);
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--green_strong);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
 }
