@@ -137,28 +137,61 @@ a {
     .nav-menu.active{
         left: 0;  
     }
+}    
+
+@media(max-width: 1700px) {
 
     .hero {
-        height: 100vh;
-        display: grid;
-        grid-template-rows: 50vh 1fr;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .hero-right {
+        width: 100%;
     }
 
     .hero-img {
-        width: 100vw;
+        max-width: 100%;
+        height: auto;
+        flex-grow: 1;
+        flex-basis: 200;
     }
 
     .hero-text {
-        display: flex;
-        flex-direction: row;
+        flex-grow: 1;
+        flex-basis: 200;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 20px;
+        font-size: 1.5em;
+        text-align: center;
     }
+
+    .hero-text h1 {
+        font-size: 3em;
+    }
+
+    .hero-text h4 {
+        font-size: 1.5em;
+        margin-top: 5%;
+
+    }
+
+    .hero-cta {
+        margin-top: 5%;
+        width: 90%;
+        height: auto;
+    }
+
 }
 
 .hero {
     background-color: var(--green_soft);
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 50vw 1fr;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .hero-text {
@@ -167,13 +200,13 @@ a {
     justify-content: center;
     align-items: center;
     font-family: "Voltaire", sans-serif;
-    padding: 20px;
+    padding: 0px;
     color: var(--pink_strong);
-
+    width: 46vw;
 }
 
 .hero-text h1 {
-    font-size: 8em;
+    font-size: 7rem;
 }
 
 .hero-text span {
@@ -217,16 +250,26 @@ a {
     color: var(--green_soft);
 }
 
+.hero-right {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
 
 .hero-img {
+    min-width: 100%;
     height: 100vh;
-    overflow: auto;
 }
 
 
 .container {
     width: 80%;
     margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
 }
 
 .features-container {
@@ -244,6 +287,7 @@ a {
     font-size: 5rem;
     color: var(--green_strong);
     text-align: center;
+    justify-content: center;
     margin-top: 25px;
 }
 
@@ -252,7 +296,8 @@ a {
 }
 
 .feature {
-    flex: 1;
+    flex-basis: 200;
+    flex-grow: 1;
     max-width: 30%;
     margin: 25px;
     text-align: center;
@@ -301,12 +346,12 @@ footer {
 
 .footer-link {
     text-decoration: none;
-    color: var(--green_soft);
+    color: var(--green_strong);
     transition: color 0.3s;
 }
 
 .footer-link:hover {
-    color: var(--green_strong);
+    color: var(--green_soft);
 }
 
 .footer-bottom {
