@@ -140,7 +140,20 @@ a {
     .nav-menu.active{
         left: 0;  
     }
-}    
+    .gallery-container {
+        display: block; 
+        width: 100%; 
+    }
+
+    .gallery-item {
+        width: 100%; 
+        margin: 15px 0; 
+    }
+    .gallery-item-img {
+        width: 100%;
+        height: 30%; 
+        object-fit: cover;
+}}   
 
 @media(max-width: 1700px) {
 
@@ -155,7 +168,9 @@ a {
 
     .hero-img {
         max-width: 100%;
-        height: auto;
+        min-width: 100%;
+        height: 100vh;
+        overflow: hidden;
         flex-grow: 1;
         flex-basis: 200;
     }
@@ -262,6 +277,7 @@ a {
 .hero-img {
     min-width: 100%;
     height: 100vh;
+
 }
 
 .product-gallery {
@@ -287,7 +303,8 @@ a {
 
 .gallery-container {
     display: flex;
-    width: 900px;
+    width: 75vw;
+    max-height: 600px;
     padding: 45px;
     margin: 20px auto;
     overflow: hidden;
@@ -295,19 +312,19 @@ a {
 }
 
 .gallery-item {
-    width: 300px;
+    width: 25%px;
     margin: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: left 0.5s ease; /* Smooth transition for left property */
+    transition: left 0.5s ease; 
 }
 
 .gallery-item img {
     width: 100%;
-    height: 200px;
+    height: 50%;
     object-fit: cover;
 }
 
@@ -360,25 +377,28 @@ a {
 
 .gallery-nav i {
     font-size: 2rem;
-    color: #333;
+    color: var(--green_strong);
 }
 
 @media (max-width: 768px) {
-    .gallery-item {
-        width: 45%;
+    .gallery-container {
+        display: block; 
+        width: 100%; 
+        height: fit-content;
     }
-}
-
-@media (max-width: 480px) {
     .gallery-item {
-        width: 100%;
+        width: 100%; 
+        margin: 15px 0; 
+        position: relative;
+    }
+    .features-container {
+        flex-direction: column;
     }
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -389,7 +409,7 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 30px;
 }
 
@@ -411,7 +431,6 @@ a {
 .feature {
     flex-basis: 200;
     flex-grow: 1;
-    max-width: 30%;
     margin: 25px;
     text-align: center;
     padding: 20px;

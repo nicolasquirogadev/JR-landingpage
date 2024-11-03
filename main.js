@@ -26,13 +26,29 @@ const galleryItems = [
     },
     {
         image: './assets/omg JR classsic one.jpg',
-        title: 'Basic Tee (Black)',
+        title: 'JR Tee (Black)',
         description: 'Description of product 3.'
     },
     {
-        image: './assets/Wine not copia.jpg',
-        title: 'Wine Not (White)',
+        image: './assets/vertical wine not  verderosa.jpg',
+        title: 'Wine Not (White/Green)',
         description: 'Description of product 4.'
+    },
+    {
+        image: './assets/vertical wine not azulrosa.jpg',
+        title: 'Wine Not (White/Blue)',
+        description: 'Description of product 5.'
+    },
+    {
+        image: './assets/basic-black.jpg',
+        title: 'Basic Tee (Black)',
+        description: 'Description of product 6.'
+    }
+    ,
+    {
+        image: './assets/tennis-cap.jpg',
+        title: 'Tennis Cap (Denim)',
+        description: 'Description of product 7.'
     }
     // Agregar mas productos aqui
 ];
@@ -43,9 +59,9 @@ let currentPosition = 0;
 function createGalleryItem(item) {
     const galleryItem = document.createElement('div');
     galleryItem.classList.add('gallery-item');
-    galleryItem.style.left = '100%'; // Initial position outside the container
+    galleryItem.style.left = '100%'; // posiciona el elemento inicialmente FUERA del container
     galleryItem.innerHTML = `
-        <img src="${item.image}" alt="${item.title}">
+        <img src="${item.image}" alt="${item.title}" class="gallery-item-img">
         <div class="gallery-item-info">
             <h3>${item.title}</h3>
             <p>${item.description}</p>
@@ -56,21 +72,21 @@ function createGalleryItem(item) {
 }
 
 function updateGallery() {
-    galleryContainer.innerHTML = ''; // Clear existing items
+    galleryContainer.innerHTML = ''; // Limpiar elementos viejos
 
-    // Create and append items based on current position
+    // Crear y mostrar elementos segun posicion en el array
     for (let i = currentPosition; i < currentPosition + 3; i++) {
-        const itemIndex = i % galleryItems.length; // Wrap around for infinite loop
+        const itemIndex = i % galleryItems.length; // loop infinito
         const galleryItem = createGalleryItem(galleryItems[itemIndex]);
         galleryContainer.appendChild(galleryItem);
 
-        // Animate the item sliding in
+        // Animacion de entrada
         setTimeout(() => {
-            galleryItem.style.left = '0'; // Slide into view
-        }, 100 * (i - currentPosition)); // Adjust delay for each item
+            galleryItem.style.left = '0'; // Slide
+        }, 100 * (i - currentPosition));
     }
     
-    // Create and append navigation arrows
+    // Crear y mostrar flechas de navegacion para galeria
     const prevArrow = document.createElement('div');
     prevArrow.classList.add('gallery-nav', 'prev');
     prevArrow.innerHTML = '<i class="ri-arrow-left-s-line"></i>';
